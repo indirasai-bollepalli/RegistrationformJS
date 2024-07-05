@@ -6,18 +6,18 @@ document.getElementById('submitBtn').addEventListener('click', function(event) {
 function validateForm() {
   const fullName = document.getElementById('fullName').value.trim();
   const email = document.getElementById('email').value.trim();
-  const phoneNumber = document.getElementById('phoneNumber').value.trim();
-  const birthDate = document.getElementById('birthDate').value.trim();
+  //const phoneNumber = document.getElementById('phoneNumber').value.trim();
+  //const birthDate = document.getElementById('birthDate').value.trim();
   const address = document.getElementById('address').value.trim();
   const city = document.getElementById('city').value.trim();
   const region = document.getElementById('region').value.trim();
   const postalCode = document.getElementById('postalCode').value.trim();
 
-  if (fullName === '' || email === '' || phoneNumber === '' || birthDate === '' ||
+  /*if (fullName === '' || email === '' || phoneNumber === '' || birthDate === '' ||
       address === '' || city === '' || region === '' || postalCode === '') {
     alert('Please fill in all fields.');
     return;
-  }
+  }*/
 
   // Show confirmation dialog for consent
   const consentConfirmed = confirm('Do you agree to the terms and conditions?');
