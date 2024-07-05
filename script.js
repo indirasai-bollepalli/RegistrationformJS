@@ -43,8 +43,8 @@ function validateForm() {
         }
     ]
 }
-          );
-          alert('Form submitted successfully!');
+);
+    alert('Form submitted successfully!');
    }).catch(function(error) {
       console.error('CDP initialization error:', error);
       alert("Error reporting data to CDP.");
