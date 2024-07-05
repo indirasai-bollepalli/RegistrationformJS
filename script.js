@@ -6,14 +6,14 @@ document.getElementById('registrationForm').addEventListener('submit', function(
 function validateForm() {
   const fullName = document.getElementById('fullName').value.trim();
   const email = document.getElementById('email').value.trim();
-  /* const phoneNumber = document.getElementById('phoneNumber').value.trim();
-  const birthDate = document.getElementById('birthDate').value.trim();
+  //const phoneNumber = document.getElementById('phoneNumber').value.trim();
+  //const birthDate = document.getElementById('birthDate').value.trim();
   const address = document.getElementById('address').value.trim();
   const city = document.getElementById('city').value.trim();
   const region = document.getElementById('region').value.trim();
   const postalCode = document.getElementById('postalCode').value.trim();
  
-  if (fullName === '' || email === '' || phoneNumber === '' || birthDate === '' || address === '' || city === '' || region === '' || postalCode === '') {
+ /*if (fullName === '' || email === '' || phoneNumber === '' || birthDate === '' || address === '' || city === '' || region === '' || postalCode === '') {
     alert('Please fill in all fields.');
     return;
   } */
@@ -31,10 +31,18 @@ function validateForm() {
   })
   .then(function(sdk) { window.CDP = sdk;
       CDP.report('Registration_Form',
-          {
-              "emailid": email,
-              "firstname": fullName
-          }
+         {
+    "emailid": email,
+    "firstname": fullName,
+    "Addressdata": [
+        {
+            "city": city,
+            "Addressid": address,
+            "Region": region,
+            "postalcode": postalcode
+        }
+    ]
+}
           );
           alert('Form submitted successfully!');
    }).catch(function(error) {
