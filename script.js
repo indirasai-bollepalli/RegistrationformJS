@@ -39,7 +39,7 @@ function validateForm() {
             "city": city,
             "Addressid": address,
             "Region": region,
-            "postalcode": postalcode
+            "postalcode": postalCode
         }
     ]
 }
