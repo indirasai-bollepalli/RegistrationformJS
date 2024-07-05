@@ -41,34 +41,6 @@ function validateForm() {
   // If all validations pass and consent is confirmed
   alert('Form submitted successfully!');
   document.getElementById('registrationForm').reset();
-  gigya.cdp.init({
-      apiDomain: 'EU5',
-      bUnitId: '4_vuyHuRd8K_y9KrWOKNHd0A',
-      appId: 'HIZ_ZYqCQQrOAywJZwT7Bg'
-  })
-  .then(function(sdk) { window.CDP = sdk;
-      CDP.report('Registration_Form',
-         {
-    "emailid": email,
-    "firstname": fullName,
-    "Addressdata": [
-        {
-            "city": city,
-            "Addressid": address,
-            "Region": region,
-            "postalcode": postalCode
-        }
-    ]
-}
-);
-    alert('Form submitted successfully!');
-   }).catch(function(error) {
-      console.error('CDP initialization error:', error);
-      alert("Error reporting data to CDP.");
-  });
-
-
-
 }
 
 function storeFormData(formData) {
