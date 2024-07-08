@@ -41,7 +41,7 @@ function validateForm() {
   // If all validations pass and consent is confirmed
   alert('Form submitted successfully!');
   document.getElementById('registrationForm').reset();
-}
+
 gigya.cdp.init({
         apiDomain: 'EU5',
         bUnitId: '4_vuyHuRd8K_y9KrWOKNHd0A',
@@ -58,6 +58,7 @@ gigya.cdp.init({
       console.error('CDP initialization error:', error);
       alert("Error reporting data to CDP.");
 });
+}
 
 function storeFormData(formData) {
   // Here you can implement your logic to store the form data, e.g., send to server, store in localStorage, etc.
