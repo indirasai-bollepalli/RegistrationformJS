@@ -23,7 +23,7 @@ function validateForm() {
   const consentConfirmed = confirm('Do you agree to the terms and conditions?');
   
   // Store form data and consent status
-  const formData = {
+ /* const formData = {
     fullName: fullName,
     email: email,
     phoneNumber: phoneNumber,
@@ -33,10 +33,10 @@ function validateForm() {
     region: region,
     postalCode: postalCode,
     consent: consentConfirmed ? 'Accepted' : 'Declined'
-  };
+  };*/
 
   // Simulate storing data (replace with actual storage mechanism)
-  storeFormData(formData);
+  //storeFormData(formData);
 
   // If all validations pass and consent is confirmed
   alert('Form submitted successfully!');
@@ -60,7 +60,7 @@ gigya.cdp.init({
 });
 }
 
-function storeFormData(formData) {
+/*function storeFormData(formData) {
   // Here you can implement your logic to store the form data, e.g., send to server, store in localStorage, etc.
   console.log('Storing form data:', formData);
-}
+}*/
