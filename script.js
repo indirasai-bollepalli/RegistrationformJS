@@ -43,21 +43,22 @@ function validateForm() {
   document.getElementById('registrationForm').reset();
 
 gigya.cdp.init({
-        apiDomain: 'EU5',
-        bUnitId: '4_vuyHuRd8K_y9KrWOKNHd0A',
-        appId: 'HIZ_ZYqCQQrOAywJZwT7Bg'
-    })
-    .then(function(sdk) { return window.CDP = sdk; 
-                         CDP.report('Customer Consent',
-{
-    "FirstName":fullName,
-    "email": email
-}
-);alert('Form submitted successfully!');
-}).catch(function(error) {
+      apiDomain: 'EU5',
+      bUnitId: '4_vuyHuRd8K_y9KrWOKNHd0A',
+      appId: 'HIZ_ZYqCQQrOAywJZwT7Bg'
+  })
+  .then(function(sdk) { window.CDP = sdk;
+      CDP.report('Customer Consent',
+          {
+              "email": email,
+              "FirstName": fullName
+          }
+          );
+          alert('Form submitted successfully!');
+   }).catch(function(error) {
       console.error('CDP initialization error:', error);
       alert("Error reporting data to CDP.");
-});
+  });
 }
 
 /*function storeFormData(formData) {
