@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(function(sdk) {
       window.CDP = sdk;
       
+      // Ensure formData.email and formData.firstName are passed as strings
       CDP.report('Registration_Form', {
         "emailid": formData.email,
         "firstname": formData.firstName,
@@ -72,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(function(sdk) {
       window.CDP = sdk;
 
+      // Ensure formData.email and formData.firstName are passed as strings
       CDP.report('Customer_Consent', {
         "FirstName": formData.firstName,
         "email": formData.email
