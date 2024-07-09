@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
       window.CDP = sdk;
 
       // Ensure formData.email and formData.firstName are passed as strings
-      CDP.report('Customer_Consent', {
+      CDP.report('Customer Consent', {
         "FirstName": formData.firstName,
         "email": formData.email
       });
