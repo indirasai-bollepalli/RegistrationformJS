@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
       window.CDP = sdk;
       
       // Ensure formData.email and formData.firstName are passed as strings
-      CDP.report('Customer ConsentAccept', {
+      CDP.report('Customer ConsentAccept', 
+         gigya.cdp.init({
         "emailid": formData.email,
         "firstname": formData.firstName,
         "Addressdata": [
