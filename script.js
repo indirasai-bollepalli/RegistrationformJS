@@ -34,32 +34,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function shareFullDetails(formData) {
     gigya.cdp.init({
-        apiDomain: 'EU5',
-        bUnitId: '4_vuyHuRd8K_y9KrWOKNHd0A',
-        appId: 'HIZ_ZYqCQQrOAywJZwT7Bg'
+      apiDomain: 'EU5',
+      bUnitId: '4_vuyHuRd8K_y9KrWOKNHd0A',
+      appId: 'HIZ_ZYqCQQrOAywJZwT7Bg'
     })
     .then(function(sdk) {
       window.CDP = sdk;
       
-      
- // REPLACE WITH REPORTED EVENT DATA
-CDP.report('Registration_Form',
-{
-    "emailid": email,
-    "firstname": firstName,
-    "Addressdata": [
-        {
+      CDP.report('Registration_Form', {
+        "emailid": formData.email,
+        "firstname": formData.firstName,
+        "Addressdata": [
+          {
             "Loremf01": "",
-            "city": city,
+            "city": formData.city,
             "Addressid": "",
-            "Region": address1,
-            "postalcode": pincode
-        }
-    ]
-}
-);
+            "Region": formData.address1,
+            "postalcode": formData.pincode
+          }
+        ]
+      });
 
-  alert('Form submitted successfully with full details!');
+      alert('Form submitted successfully with full details!');
     })
     .catch(function(error) {
       console.error('CDP initialization error:', error);
@@ -68,20 +64,18 @@ CDP.report('Registration_Form',
   }
 
   function shareBasicDetails(formData) {
-   gigya.cdp.init({
-        apiDomain: 'EU5',
-        bUnitId: '4_vuyHuRd8K_y9KrWOKNHd0A',
-        appId: 'HIZ_ZYqCQQrOAywJZwT7Bg'
+    gigya.cdp.init({
+      apiDomain: 'EU5',
+      bUnitId: '4_vuyHuRd8K_y9KrWOKNHd0A',
+      appId: 'HIZ_ZYqCQQrOAywJZwT7Bg'
     })
     .then(function(sdk) {
       window.CDP = sdk;
-      
-     CDP.report('Customer Consent',
-{
-    "FirstName": firstName,
-    "email": email
-}
-);
+
+      CDP.report('Customer_Consent', {
+        "FirstName": formData.firstName,
+        "email": formData.email
+      });
 
       alert('Form submitted successfully with basic details!');
     })
