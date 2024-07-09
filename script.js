@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function shareFullDetails(formData) {
+     gigya.cdp.init({
         apiDomain: 'EU5',
         bUnitId: '4_vuyHuRd8K_y9KrWOKNHd0A',
         appId: 'HIZ_ZYqCQQrOAywJZwT7Bg'
@@ -41,8 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
       window.CDP = sdk;
       
       // Ensure formData.email and formData.firstName are passed as strings
-      CDP.report('Customer ConsentAccept', 
-         gigya.cdp.init({
+      CDP.report('Customer ConsentAccept', {
         "emailid": formData.email,
         "firstname": formData.firstName,
         "Addressdata": [
