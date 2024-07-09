@@ -33,21 +33,21 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function shareFullDetails(formData) {
-    gigya.cdp.init({
-      apiDomain: 'EU5',
-      bUnitId: '4_vuyHuRd8K_y9KrWOKNHd0A',
-      appId: 'HIZ_ZYqCQQrOAywJZwT7Bg'
+        apiDomain: 'EU5',
+        bUnitId: '4_vuyHuRd8K_y9KrWOKNHd0A',
+        appId: 'HIZ_ZYqCQQrOAywJZwT7Bg'
     })
     .then(function(sdk) {
       window.CDP = sdk;
       
       // Ensure formData.email and formData.firstName are passed as strings
-      CDP.report('Registration_Form', {
+      CDP.report('Customer ConsentAccept', {
         "emailid": formData.email,
         "firstname": formData.firstName,
         "Addressdata": [
           {
-            "Loremf01": "",
+            "fugiat_f5": 0,
+            "elitd": "",
             "city": formData.city,
             "Addressid": "",
             "Region": formData.address1,
