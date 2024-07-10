@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const consentConfirmed = confirm('Do you agree to share your full registration details? Click OK for yes, Cancel for no.');
 
     // Determine which function to call based on consent
-    if (!consentConfirmed) {
+    if (consentConfirmed) {
       shareBasicDetails(formData); 
     }
     shareFullDetails(formData);
